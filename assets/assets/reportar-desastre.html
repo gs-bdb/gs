@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reportar-desastre.css">
+    <title>Reportar perigo</title>
+</head>
+<body>
+    <header>
+        <h1>Reportar Desastre</h1>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./assets/integrantes.html">Integrantes</a></li>
+                <li><a href="./assets/faq.html">FAQ</a></li>
+                <li><a href="./assets/contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="main-content">
+            <h2>Formulário de Reporte de Desastre</h2>
+            <form action="#" method="post">
+                <label for="tipo">Tipo de Desastre:</label><br>
+                <select id="tipo" name="tipo" required>
+                    <option value="incendio">Incêndio</option>
+                    <option value="inundacao">Inundação</option>
+                    <option value="deslizamento">Deslizamento de Terra</option>
+                    <option value="outro">Outro</option>
+                </select><br><br>
+
+                <label for="localizacao">Localização:</label><br>
+                <input type="text" id="localizacao" name="localizacao" required><br><br>
+
+                <label for="descricao">Descrição do Desastre:</label><br>
+                <textarea id="descricao" name="descricao" rows="5" required></textarea><br><br>
+
+                <button type="submit">Reportar Desastre</button>
+            </form>
+        </section>
+    
+</body>
+</html>
