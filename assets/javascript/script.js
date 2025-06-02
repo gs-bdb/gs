@@ -33,31 +33,3 @@ document.addEventListener('DOMContentLoaded', function() {
             // Exibe mensagem no console (para fins de demonstração)
             console.log('Link clicado: ' + this.textContent);
         });
-    });
-    
-    // Adiciona efeito ao botão Dashboard
-    const dashboardButton = document.querySelector('.dashboard-button a');
-    
-    dashboardButton.addEventListener('click', function(e) {
-        e.preventDefault(); // Previne navegação real
-        
-        // Efeito visual ao clicar
-        this.style.transform = 'scale(0.95)';
-        this.style.backgroundColor = '#aaa';
-        
-        setTimeout(() => {
-            this.style.transform = 'scale(1)';
-            this.style.backgroundColor = '#ccc';
-            
-            // Exibe mensagem de acesso ao dashboard (para fins de demonstração)
-            alert('Acessando o Dashboard SafeWay!');
-        }, 200);
-    });
-    
-    // Adiciona animação suave ao carregar a página
-    document.querySelector('.container').style.opacity = '0';
-    setTimeout(() => {
-        document.querySelector('.container').style.transition = 'opacity 1s ease';
-        document.querySelector('.container').style.opacity = '1';
-    }, 100);
-});
