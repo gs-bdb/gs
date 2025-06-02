@@ -1,35 +1,27 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Adiciona efeito de hover nos links do menu
-    const navLinks = document.querySelectorAll('header nav ul li a');
+
+
+const logo = document.querySelector('.logo-container h1');
+const navLinks = document.querySelectorAll('.main-nav a');
+const heroImage = document.querySelector('.hero-image img');
+const dashboardButton = document.querySelector('.dashboard-button a');
+
+
+if (logo) {
+    setInterval(() => {
+        logo.classList.add('pulse');
+        setTimeout(() => {
+            logo.classList.remove('pulse');
+        }, 1000);
+    }, 5000);
+}
+
+
+navLinks.forEach(link => {
+    link.addEventListener('mouseenter', function() {
+        this.style.textDecoration = 'underline';
+    });
     
-    navLinks.forEach(link => {
-        // Efeito ao passar o mouse
-        link.addEventListener('mouseenter', function() {
-            this.style.color = '#007bff';
-            this.style.transition = 'color 0.3s ease';
-        });
-        
-        // Retorna à cor original ao remover o mouse
-        link.addEventListener('mouseleave', function() {
-            this.style.color = '#333';
-        });
-        
-        // Efeito ao clicar
-        link.addEventListener('click', function(e) {
-            e.preventDefault(); // Previne navegação real
-            
-            // Remove classe ativa de todos os links
-            navLinks.forEach(l => l.classList.remove('active'));
-            
-            // Adiciona classe ativa ao link clicado
-            this.classList.add('active');
-            
-            // Efeito visual de clique
-            this.style.color = '#0056b3';
-            setTimeout(() => {
-                this.style.color = '#333';
-            }, 300);
-            
-            // Exibe mensagem no console (para fins de demonstração)
-            console.log('Link clicado: ' + this.textContent);
-        });
+    link.addEventListener('mouseleave', function() {
+        this.style.textDecoration = 'none';
+    });
+});
