@@ -1,0 +1,201 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    background-image: url('./assets/img/colagem-vintage-com-mao-segurando-estrada.jpg')
+}
+/* Navegação principal */
+.main-nav {
+    background-color: #7989b6;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.main-nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-nav li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.main-nav a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.main-nav a:hover {
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.main-nav .separator {
+    color: #000;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Container do logo */
+.logo-container {
+    background: linear-gradient(to right, #a4c4f4, #1e6bdb);
+    padding: 40px 0;
+    text-align: center;
+}
+
+.logo-container h1 {
+    color: #000;
+    font-size: 48px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.logo-container h1:hover {
+    transform: scale(1.05);
+}
+
+/* Seção principal */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-image {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.hero-image:hover img {
+    transform: scale(1.02);
+}
+
+.hero-text {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.hero-text h2 {
+    font-size: 36px;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.hero-text h3 {
+    font-size: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Botão Dashboard */
+.dashboard-button {
+    margin: 20px 0;
+    transition: transform 0.3s ease;
+}
+
+.dashboard-button:hover {
+    transform: translateY(-5px);
+}
+
+.dashboard-button a {
+    display: block;
+    background-color: #d9d9d9;
+    color: #000;
+    text-decoration: none;
+    padding: 15px 80px;
+    font-size: 32px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.dashboard-button a:hover {
+    background-color: #c0c0c0;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-button a:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Efeitos de carregamento */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+header, .hero-image, .hero-text, .dashboard-button {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.hero-image {
+    animation-delay: 0.2s;
+}
+
+.hero-text {
+    animation-delay: 0.4s;
+}
+
+.dashboard-button {
+    animation-delay: 0.6s;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .main-nav ul {
+        flex-direction: column;
+    }
+    
+    .main-nav li {
+        margin: 5px 0;
+    }
+    
+    .main-nav .separator {
+        display: none;
+    }
+    
+    .logo-container h1 {
+        font-size: 36px;
+    }
+    
+    .hero-text h2 {
+        font-size: 28px;
+    }
+    
+    .hero-text h3 {
+        font-size: 24px;
+    }
+    
+    .dashboard-button a {
+        padding: 10px 40px;
+        font-size: 24px;
+    }
+}
