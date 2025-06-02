@@ -25,3 +25,14 @@ navLinks.forEach(link => {
         this.style.textDecoration = 'none';
     });
 });
+
+  
+  if (heroImage) {
+    heroImage.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.02)';
+    });
+    
+    heroImage.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1)';
+    });
+}
