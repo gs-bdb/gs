@@ -1,0 +1,115 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Cabeçalho - Reutilizando estilos da página anterior para consistência */
+header {
+    background-color: #4682B4; /* Azul aço */
+    color: white;
+}
+
+header h1 {
+    text-align: center;
+    padding: 20px 0;
+    margin: 0;
+    font-size: 2em;
+    /* Gradiente como na imagem (aproximado) */
+    background: linear-gradient(to bottom, #5CACEE, #4682B4);
+}
+
+nav {
+    background-color: #6CA6CD; /* Azul um pouco mais claro */
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Conteúdo Principal */
+main {
+    padding: 20px;
+    max-width: 800px; /* Aumentar um pouco a largura para acomodar botões lado a lado */
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centralizar conteúdo da seção */
+}
+
+.dashboard h2 {
+    color: #4682B4;
+    margin-bottom: 10px;
+}
+
+.dashboard p {
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* Container dos botões */
+.button-container {
+    display: flex; /* Usar flexbox para alinhar botões lado a lado */
+    justify-content: center; /* Centralizar os botões no container */
+    gap: 20px; /* Espaço entre os botões */
+    flex-wrap: wrap; /* Permitir que os botões quebrem linha em telas menores */
+}
+
+/* Estilo dos botões (links estilizados) */
+.button {
+    background-color: #6c757d;
+    color: white;
+    padding: 20px 30px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    min-width: 150px; /* Largura mínima para os botões */
+    transition: background-color 0.3s ease;
+    display: inline-block; /* Necessário para aplicar padding e outras propriedades de bloco */
+}
+
+.button:hover {
+    background-color: #5a6268; /* Cor um pouco mais escura no hover */
+    cursor: pointer;
+}
+
+/* Ajustes para telas menores (opcional, mas bom para responsividade) */
+@media (max-width: 600px) {
+    .button-container {
+        flex-direction: column; /* Empilhar botões verticalmente */
+        align-items: center; /* Centralizar botões empilhados */
+    }
+
+    .button {
+        width: 80%; /* Fazer botões ocuparem mais largura */
+        margin-bottom: 10px; /* Adicionar espaço abaixo de cada botão */
+    }
+}
