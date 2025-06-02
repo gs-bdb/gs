@@ -1,0 +1,97 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Cabeçalho - Reutilizando estilos anteriores */
+header {
+    /* Adicionando um fundo base caso o gradiente não seja desejado aqui */
+    background-color: #6CA6CD; /* Azul claro da navegação anterior */
+    color: white;
+    padding: 10px 0;
+    text-align: center; /* Centralizar links da navegação */
+}
+
+/* Ajuste na navegação para ficar como na imagem (sem o H1 grande) */
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0 15px;
+    display: inline-block; /* Para aplicar margens corretamente */
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Conteúdo Principal */
+main {
+    padding: 20px;
+    max-width: 900px; /* Largura maior para acomodar colunas */
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-content h1 {
+    text-align: center;
+    padding: 20px 0;
+    margin: 0 0 30px 0; /* Adiciona margem inferior */
+    font-size: 2em;
+    color: white;
+    /* Gradiente como no título das outras páginas */
+    background: linear-gradient(to bottom, #5CACEE, #4682B4);
+    border-radius: 8px; /* Arredondar cantos do título */
+}
+
+/* Container para os itens do FAQ - Usando Grid para layout de colunas */
+.main-content {
+    /* O container já existe, vamos aplicar grid nele */
+    /* No entanto, o H1 está dentro dele. Melhor criar um container para os itens */
+}
+
+/* Criaremos um wrapper para os itens do FAQ no HTML se necessário, */
+/* ou aplicaremos flex/grid diretamente na section se o H1 não atrapalhar */
+
+/* Estilizando os itens do FAQ diretamente dentro da section */
+.main-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Layout responsivo de colunas */
+    gap: 20px; /* Espaço entre os itens */
+}
+
+/* Ajuste para o H1 não entrar no grid */
+.main-content h1 {
+    grid-column: 1 / -1; /* Faz o H1 ocupar todas as colunas */
+    margin-bottom: 30px;
+}
+
+.faq-item {
+    background-color: #f9f9f9; /* Fundo leve para o item todo */
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #eee;
+}
+
+.faq-item h2 {
+    background-color: #adcce4; /* Azul claro acinzentado da imagem */
+    color: #333; /* Texto escuro */
+    padding: 10px 15px;
+    margin: -15px -15px 15px -15px; /* Remover margem padrão e ajustar padding */
+    border-radius: 5px 5px 0 0; /* Arredondar cantos superiores */
+    font-size: 1.1em;
+}
+
+.faq-item p {
+    margin: 0;
+    line-height: 1.6;
+    color: #555;
+}
+
