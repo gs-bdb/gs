@@ -1,39 +1,42 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/javascript/script.js">
-    <title>Home</title>
+    <title>SafeWay - Sua rota segura</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Seja bem-vindo ao SafeWay</h1>
-        <nav>
+        <nav class="main-nav">
             <ul>
-                <li><a href="./assets/integrantes.html"></a></li>
-                <li><a href="./assets/faq.html"></a></li>
-                <li><a href="./assets/contato.html"></a></li>
+                
+                <li class="separator">|</li>
+                <li><a href="./assets/integrantes.html">INTEGRANTES</a></li>
+                <li class="separator">|</li>
+                <li><a href="./assets/faq.html">FAQ</a></li>
+                <li class="separator">|</li>
+                <li><a href="./assets/contato.html">CONTATO</a></li>
             </ul>
         </nav>
-    </header>
-    <main>
-        <section class="hero">
-            
-            <img src="./assets/img/colagem-vintage-com-mao-segurando-estrada.jpg" alt="mao segurando estrada">
-            <h2>Sua rota segura <p>
-                em situações de risco</p>
-            </p></h2>
-            <nav>
-                <ul>
-                    <li><a href="./assets/dashboard.html"></a></li>
-                </ul>
-            </nav>
-        </section>
-
-
-    </main>
+        <div class="logo-container">
+            <h1>SafeWay</h1>
+        </div>
+    </header> 
     
+    <main>
+        <div class="hero-image">
+            <img src="./assets/img/colagem-vintage-com-mao-segurando-estrada.jpg" alt="segurando uma estrada em meio à natureza" >
+        </div>
+        
+        <div class="hero-text">
+            <h2>Sua rota segura</h2>
+            <h3>em situações de risco</h3>
+        </div>
+        
+        <div class="dashboard-button">
+            <a href="./assets/dashboard.html">Dashboard</a>
+        </div>
+    </main>
 </body>
 </html>
