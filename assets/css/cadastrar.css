@@ -1,38 +1,44 @@
-/* Estilos gerais */
-body {
-    font-family: Arial, sans-serif;
+/* Reset básico */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-/* Cabeçalho - Reutilizando estilos anteriores */
-header {
-    background-color: #4682B4; /* Azul aço */
-    color: white;
-}
-
-header h1 {
-    text-align: center;
-    padding: 20px 0;
+body {
+    background-color: #f8f8f8;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v20H0z' fill='%23f0f0f0' fill-opacity='0.4'/%3E%3C/svg%3E");
+    padding: 0;
     margin: 0;
-    font-size: 2em;
-    /* Gradiente como na imagem */
-    background: linear-gradient(to bottom, #5CACEE, #4682B4);
 }
 
+/* Título pequeno no topo */
+body::before {
+    content: "CADASTRAR ABRIGO";
+    display: block;
+    padding: 5px 10px;
+    color: #888;
+    font-size: 12px;
+}
+
+/* Cabeçalho com gradiente azul */
+header {
+    width: 100%;
+}
+
+/* Estilo da navegação */
 nav {
-    background-color: #6CA6CD; /* Azul um pouco mais claro */
+    background-color: #8ca3c3;
     padding: 10px 0;
     text-align: center;
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: inline-block;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 nav ul li {
@@ -41,220 +47,124 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: #000;
     text-decoration: none;
-    font-weight: bold;
     text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
+/* Separadores entre os links do menu */
+nav ul li:not(:last-child)::after {
+    content: "|";
+    margin-left: 30px;
+    color: #000;
 }
 
-/* Conteúdo Principal */
-main {
-    padding: 20px;
-    max-width: 700px; /* Largura ajustada para o formulário */
-    margin: 20px auto;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.main-content h2 {
-    color: #4682B4;
+/* Título principal com gradiente */
+h1 {
+    background: linear-gradient(to right, #8ca3c3, #3a7bd5);
+    color: #000;
     text-align: center;
-    margin-bottom: 30px;
+    padding: 20px 0;
+    font-size: 32px;
+    margin: 0;
 }
 
-/* Formulário */
+/* Conteúdo principal */
+main {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.main-content {
+    background-color: transparent;
+    padding: 0;
+}
+
+/* Estilo do formulário */
 form {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Duas colunas */
-    gap: 20px; /* Espaçamento entre colunas e linhas */
-}
-
-/* Fazer o Endereço e o Botão ocuparem as duas colunas */
-/* Selecionando o div que contém o label 'Endereço:' e seu input */
-form div:has(label[for='endereco']),
-form button[type='submit'] {
-    grid-column: 1 / -1; /* Ocupa a largura total */
-}
-
-/* Adicionando divs para agrupar label e input se não existirem no HTML original */
-/* Assumindo que o HTML é como fornecido, com <br> */
-/* Para aplicar grid corretamente, idealmente cada label/input par estaria em um div */
-/* Vamos estilizar diretamente os elementos, mas a estrutura HTML ideal seria com divs */
-
-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-form input[type="text"],
-form input[type="number"] {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    background-color: #e9ecef; /* Cinza claro como na imagem */
-    margin-bottom: 0; /* Remover margem inferior, o gap do grid cuida disso */
 }
 
-/* Remover os <br><br> extras via CSS não é possível, idealmente seriam removidos do HTML */
-
-form button[type="submit"] {
-    background-color: #e9ecef; /* Cinza claro */
-    color: #333;
-    padding: 10px 20px;
-    border: 1px solid #dee2e6;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1em;
-    font-weight: bold;
-    width: auto; /* Largura automática */
-    justify-self: end; /* Alinhar botão à direita */
-    margin-top: 10px; /* Espaço acima do botão */
-}
-
-form button[type="submit"]:hover {
-    background-color: #ced4da;
-}
-
-/* Ajustes para telas menores */
-@media (max-width: 600px) {
-    form {
-        grid-template-columns: 1fr; /* Uma coluna */
-    }
-
-    /* Garantir que todos os itens ocupem uma coluna */
-    form div:has(label[for='endereco']),
-    form button[type='submit'] {
-        grid-column: 1 / -1;
-    }
-
-    form button[type="submit"] {
-        justify-self: center; /* Centralizar botão */
-        width: 50%;
-    }
-}
-
-/* Estilos específicos para agrupar label/input se o HTML for modificado */
-/* Exemplo: 
-<div class="form-group">
-    <label for="nome">Nome do Abrigo:</label>
-    <input type="text" id="nome" name="nome" required>
-</div>
-*/
-.form-group {
-    /* Estilos para o grupo se necessário */
-}
-
-/* Ajuste para o layout da imagem (Nome e Capacidade na primeira linha) */
-/* O HTML fornecido tem Nome, Endereço, Capacidade. A imagem tem Nome, Capacidade, Tipo. */
-/* Vou seguir o HTML, colocando Nome e Endereço na primeira linha se possível */
-
-/* Reajuste do grid para Nome e Endereço na primeira linha */
-form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-/* Agrupar label+input para melhor controle */
-form > label {
-    display: block; /* Garante que o label fique acima */
-    margin-bottom: 5px;
-    font-weight: bold;
-    /* Posicionar labels corretamente no grid */
-}
-
-label[for='nome'] { grid-column: 1; grid-row: 1; }
-input#nome { grid-column: 1; grid-row: 2; }
-
-label[for='endereco'] { grid-column: 2; grid-row: 1; }
-input#endereco { grid-column: 2; grid-row: 2; }
-
-label[for='capacidade'] { grid-column: 1 / -1; grid-row: 3; }
-input#capacidade { grid-column: 1 / -1; grid-row: 4; }
-
-form button[type='submit'] {
-    grid-column: 1 / -1; /* Ocupa a largura total */
-    grid-row: 5;
-    justify-self: end; /* Alinhar botão à direita */
-    margin-top: 10px;
-}
-
-/* Remover <br> do HTML é essencial para este layout funcionar bem */
-
-/* Simplificação final, assumindo que podemos agrupar label/input em divs */
-form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.form-group {
-    /* Cada .form-group contém label e input */
-}
-
-.form-group-nome { grid-column: 1; grid-row: 1; }
-.form-group-endereco { grid-column: 2; grid-row: 1; } /* Colocando endereço ao lado */
-.form-group-capacidade { grid-column: 1 / -1; grid-row: 2; } /* Capacidade abaixo */
-
-form button[type='submit'] {
-    grid-column: 1 / -1; /* Botão abaixo de tudo */
-    grid-row: 3;
-    justify-self: end;
-    margin-top: 10px;
-}
-
-/* Resetando estilos anteriores para evitar conflito */
-form > label, form > input, form > br { display: none; } /* Esconder elementos soltos se usarmos divs */
-
-/* Estilo final (mais simples, sem grid complexo, apenas fluxo normal com ajustes) */
-form {
-    display: block; /* Resetar grid */
-}
-
-form div.form-group { /* Assumindo que vamos agrupar no HTML */
+.form-row {
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 15px;
+    width: 100%;
 }
 
-form label {
+.form-group {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.form-group:last-child {
+    margin-right: 0;
+}
+
+.full-width {
+    width: 100%;
+}
+
+label {
     display: block;
     margin-bottom: 5px;
-    font-weight: bold;
+    font-weight: normal;
+    font-size: 16px;
 }
 
-form input[type="text"],
-form input[type="number"] {
+input[type="text"],
+input[type="number"] {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box;
-    background-color: #e9ecef;
+    background-color: #e0e0e0;
+    font-size: 16px;
+    margin-top: 5px;
 }
 
-form button[type="submit"] {
-    background-color: #e9ecef;
-    color: #333;
-    padding: 10px 20px;
-    border: 1px solid #dee2e6;
-    border-radius: 4px;
+/* Botão de cadastro */
+.button-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+button[type="submit"] {
+    background-color: #e0e0e0;
+    color: #000;
+    border: none;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
     cursor: pointer;
-    font-size: 1em;
-    font-weight: bold;
-    display: block; /* Ocupar largura */
-    width: fit-content; /* Ajustar largura ao conteúdo */
-    margin: 20px auto 0 auto; /* Centralizar botão */
+    border-radius: 4px;
+    text-transform: lowercase;
 }
 
-form button[type="submit"]:hover {
-    background-color: #ced4da;
+/* Responsividade */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+    }
+    
+    .form-group {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav ul li:not(:last-child)::after {
+        content: "";
+        margin-left: 0;
+    }
 }
 
-/* Vamos manter o layout simples de uma coluna, que funciona com o HTML dado */
