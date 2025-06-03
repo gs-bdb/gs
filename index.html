@@ -6,6 +6,19 @@
     <title>SafeWay - Sua rota segura</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/javascript/script.js">
+    <script>
+        window.watsonAssistantChatOptions = {
+          integrationID: "39a572e6-4355-493b-b38d-f9c9dbb11b05", // The ID of this integration.
+          region: "us-south", // The region your integration is hosted in.
+          serviceInstanceID: "6ae19653-746c-4d8a-9da3-51a1f45fb4ed", // The ID of your service instance.
+          onLoad: async (instance) => { await instance.render(); }
+        };
+        setTimeout(function(){
+          const t=document.createElement('script');
+          t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+          document.head.appendChild(t);
+        });
+      </script>
 </head>
 <body>
     <header>
